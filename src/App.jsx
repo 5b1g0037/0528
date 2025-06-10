@@ -2,11 +2,14 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import MySlider from "./component/MySlider";
-import MyPanel from "./component/MyPanel";
-import MyCalculator from "./component/MyCalculator";
+import MySlider from "./component/MySlider/MySlider";
+import MyPanel from "./component/MyPanel/MyPanel";
+import MyCalculator from "./component/MyCalculator/MyCalculator";
 
 function App() {
+  const [r, setR] = useState(128);
+  const [g, setG] = useState(128);
+  const [b, setB] = useState(128);
   const [count, setCount] = useState(0);
 
   return (
@@ -22,13 +25,13 @@ function App() {
       <h1>5b1g0037王淮錡</h1>
       <h2>我的第一個元件：Slider</h2>
       <div>
-        <p>R:<MySlider /></p>
-        <p>G:<MySlider /></p>
-        <p>B:<MySlider /></p>
+        <p>R:<MySlider value={r} onChange={setR} /></p>
+        <p>G:<MySlider value={g} onChange={setG} /></p>
+        <p>B:<MySlider value={b} onChange={setB} /></p>
       </div>
       <br/>
       <h2>第二個元件：RGB色彩面板</h2>
-      <MyPanel />
+      <MyPanel r={r} g={g} b={b} />
       <h2>計算機</h2>
       <MyCalculator />
       <div className="card">

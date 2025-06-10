@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MySlider from "./MySlider";
+import MySlider from "../MySlider/MySlider";
 
 function MyPanel() {
   const [r, setR] = useState(128);
